@@ -11,7 +11,7 @@ const portfolioData = {
   bio:     "10+ years building high-performance distributed systems across Data Privacy, FinTech, and AdTech. Staff Software Engineer at BigID. I specialise in event-driven backend architecture — and over the last year, in making AI a structural part of how those systems are designed and delivered.",
   email:   "muthuqumar.s@gmail.com",
   phone:   "+91 9003239605",
-  linkedin: "https://linkedin.com/in/muthuqumar",   // ← update with real URL
+  linkedin: "https://www.linkedin.com/in/muthuqumars",   // ← update with real URL
 
 
   // ── How I Work ────────────────────────────
@@ -55,14 +55,14 @@ const portfolioData = {
       badge:       "Personal",
       description: "A local AI development assistant that embeds into any codebase. Describe work in plain English — bug fix, feature, greenfield app — and a team of specialised agents handles the rest: business analyst, architect, developer, QA. Live Kanban board tracks progress; explicit approval gates before anything commits. The agent orchestration layer is deliberately model-agnostic: the same workflow runs identically on Claude, OpenAI, Gemini, or a local Qwen model via Ollama — zero API cost, no data leaving the machine. Model choice becomes an infrastructure decision, not a hard dependency.",
       tags:        ["Multi-agent", "TypeScript", "Node.js", "Ollama", "Qwen", "Model-agnostic"],
-      link:        "#"   // ← replace with GitHub URL when public
+      link:        "https://github.com/muthuqumar/project-q"   // ← replace with GitHub URL when public
     },
     {
       name:        "Federated Reporting Engine",
       badge:       "Personal",
       description: "LLM-powered natural language reporting engine built around the ASSESS framework. Hard agency boundary: Claude exclusively parses intent into structured JSON — all database interaction is handled by a deterministic DSL layer downstream. Claude never constructs a query or sees a connection string. Supports PostgreSQL, MySQL, and MongoDB with live schema introspection and AES-256 encrypted credential storage.",
       tags:        ["ASSESS Framework", "Claude API", "Java", "TypeScript", "PostgreSQL", "MongoDB"],
-      link:        "#"   // ← replace with GitHub URL when public
+      link:        null   // ← replace with GitHub URL when public
     },
     {
       name:        "PIA & RoPA MCP Agents · BigID",
@@ -76,7 +76,7 @@ const portfolioData = {
       badge:       "Published",
       description: "Co-authored a 5-part technical article series on building production-grade agentic features. Defines strict agency boundaries for safe AI deployment — where exactly the AI ends and the deterministic system begins, and how to make that boundary impossible to cross by accident.",
       tags:        ["Agentic Design", "AI Safety", "Published Series"],
-      link:        "#"   // ← replace with article URL
+      link:        "https://medium.com/@shakeel.s/part-3-the-framework-assess-b38b21fd7d50"   // ← replace with article URL
     },
     {
       name:        "Agentic Data Flows · BigID",
