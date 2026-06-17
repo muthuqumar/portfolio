@@ -131,7 +131,6 @@
 
 <main>
   <p class="page-eyebrow">Cover Note</p>
-  <h1>Written for <span id="cover-company"></span></h1>
 
   <div class="cover-wrapper">
     <div class="cover-topbar"></div>
@@ -166,8 +165,7 @@
 
   document.title = `Cover Note · ${d.name}`;
   document.getElementById('nav-title').textContent      = `${cn.company} · ${cn.role}`;
-  document.getElementById('cover-company').textContent  = cn.company;
-  document.getElementById('cover-from-name').textContent  = d.name;
+document.getElementById('cover-from-name').textContent  = d.name;
   document.getElementById('cover-from-title').textContent = d.title;
   document.getElementById('cover-recipient').textContent  = cn.recipient;
   document.getElementById('cover-role').textContent       = cn.role;
