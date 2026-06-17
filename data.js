@@ -151,8 +151,8 @@ const portfolioData = {
 
   // ── Cover Note ────────────────────────────
   coverNote: {
-    recipient: "ZoomRx",
-    company:   "ZoomRx",
+    recipient: "",
+    company:   "",
     role:      "Staff Software Engineer",
     date:      "June 2026",
     paragraphs: [

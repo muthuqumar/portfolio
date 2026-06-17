@@ -142,9 +142,6 @@
           <p class="subtitle" id="cover-from-title"></p>
         </div>
         <div class="cover-to">
-          <p class="label">To</p>
-          <p class="recipient" id="cover-recipient"></p>
-          <p class="role" id="cover-role"></p>
           <p class="date" id="cover-date"></p>
         </div>
       </div>
@@ -164,11 +161,9 @@
   const cn = d.coverNote;
 
   document.title = `Cover Note · ${d.name}`;
-  document.getElementById('nav-title').textContent      = `${cn.company} · ${cn.role}`;
-document.getElementById('cover-from-name').textContent  = d.name;
+  document.getElementById('nav-title').textContent        = `Cover Note · ${cn.role}`;
+  document.getElementById('cover-from-name').textContent  = d.name;
   document.getElementById('cover-from-title').textContent = d.title;
-  document.getElementById('cover-recipient').textContent  = cn.recipient;
-  document.getElementById('cover-role').textContent       = cn.role;
   document.getElementById('cover-date').textContent       = cn.date;
   document.getElementById('cover-body').innerHTML         = cn.paragraphs.map(p => `<p>${p}</p>`).join('');
   document.getElementById('sign-name').textContent        = d.name;
