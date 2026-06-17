@@ -244,7 +244,9 @@
     }
     .exp-company {
       font-size: 13px; font-weight: 600; color: var(--accent);
+      text-decoration: none; display: inline-block;
     }
+    a.exp-company:hover { text-decoration: underline; }
     .exp-role {
       font-size: 17px; font-weight: 600;
       letter-spacing: -0.01em; margin-bottom: 10px;
@@ -545,7 +547,9 @@
     <div class="exp-item">
       <div class="exp-meta">
         <p class="exp-period">${e.period}</p>
-        <p class="exp-company">${e.company}</p>
+        ${e.link
+          ? `<a class="exp-company" href="${e.link}" target="_blank" rel="noopener">${e.company} ↗</a>`
+          : `<p class="exp-company">${e.company}</p>`}
       </div>
       <div>
         <p class="exp-role">${e.role}</p>

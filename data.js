@@ -114,30 +114,35 @@ const portfolioData = {
     {
       role:        "Staff Software Engineer",
       company:     "BigID",
+      link: "https://bigid.com",
       period:      "Jul 2024 – Present",
       description: "Pioneered BigID's first Agentic AI release — Agentic Data Flows, Assessments, and Reporting. Re-architected Autofill using transformer.js cosine similarity, reducing response latency by 75%. Designed event-driven architecture for Data Mapping and Privacy Apps synchronisation. Part of ai-dev-guild: formulated team-wide AI development workflows adopted across engineering."
     },
     {
       role:        "Senior Software Engineer",
       company:     "CloudSense",
+      link: "https://cloudsense.com",
       period:      "May 2021 – Jul 2024",
       description: "Led Commercial Order Management microservice for the Omni Commerce Application. Migrated legacy Java Mule app to Spring Boot 3. Built Java middleware for high-traffic ad server integrations across Google Ad Manager and Freewheel."
     },
     {
       role:        "Software Developer 2",
       company:     "Oracle Financial Services",
+      link: "https://www.oracle.com/in/financial-services",
       period:      "Aug 2019 – Apr 2021",
       description: "Production features for Oracle's Financial Crime and Compliance Studio, deployed across tier-1 global investment banks. Engineered hybrid name-matching microservice combining Jaro-Winkler with Oracle's legacy engine."
     },
     {
       role:        "Software Engineer",
       company:     "Nagra Kudelski",
+      link: "https://www.nagra.com",
       period:      "Mar 2018 – Aug 2019",
       description: "Java microservices for Nagra's OpenTV Platform, powering backend systems for major European television providers serving millions of subscribers."
     },
     {
       role:        "Programmer Analyst",
       company:     "Cognizant",
+      link: "https://www.cognizant.com/us/en",
       period:      "Sep 2015 – Nov 2017",
       description: "Core Java development and OpenText Document Sciences xPression development. Built Java-based automation utilities that reduced manual validation effort across document processing workflows."
     }
