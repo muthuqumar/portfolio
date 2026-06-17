@@ -11,7 +11,7 @@ const portfolioData = {
   bio:     "10+ years building high-performance distributed systems across Data Privacy, FinTech, and AdTech. Staff Software Engineer at BigID. I specialise in event-driven backend architecture — and over the last year, in making AI a structural part of how those systems are designed and delivered.",
   email:   "muthuqumar.s@gmail.com",
   phone:   "+91 9003239605",
-  linkedin: "https://www.linkedin.com/in/muthuqumars",   // ← update with real URL
+  linkedin: "https://www.linkedin.com/in/muthuqumars",
 
 
   // ── How I Work ────────────────────────────

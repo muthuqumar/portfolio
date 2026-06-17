@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cover Note · Muthu Qumar S</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --page:     #fbfbfd;
+      --surface:  #ffffff;
+      --text:     #1d1d1f;
+      --secondary:#6e6e73;
+      --tertiary: #86868b;
+      --accent:   #0066cc;
+      --border:   rgba(0,0,0,0.08);
+      --shadow-md:0 8px 40px rgba(0,0,0,0.10);
+      --radius:   18px;
+      --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--page);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 52px;
+      display: flex; align-items: center;
+      padding: 0 max(2rem, calc((100vw - 980px) / 2));
+      background: rgba(251,251,253,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-back {
+      font-size: 14px; color: var(--accent);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.7; }
+    .nav-title {
+      margin-left: auto;
+      font-size: 13px; color: var(--tertiary);
+    }
+
+    /* ─── LAYOUT ─── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 100px 2rem 80px;
+    }
+
+    /* ─── HEADER ─── */
+    .page-eyebrow {
+      font-size: 13px; font-weight: 500;
+      color: var(--accent); letter-spacing: 0.04em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700; letter-spacing: -0.025em;
+      line-height: 1.12; margin-bottom: 56px;
+    }
+    h1 span { color: var(--secondary); }
+
+    /* ─── COVER NOTE ─── */
+    .cover-wrapper {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .cover-topbar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, #34aadc 100%);
+    }
+    .cover-inner { padding: 56px 64px; }
+    .cover-meta {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 48px; flex-wrap: wrap; gap: 16px;
+    }
+    .cover-from .label { font-size: 12px; color: var(--tertiary); margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cover-from .name  { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    .cover-from .subtitle { font-size: 14px; color: var(--secondary); }
+    .cover-to { text-align: right; }
+    .cover-to .label { font-size: 12px; color: var(--tertiary); margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cover-to .recipient { font-size: 15px; font-weight: 500; }
+    .cover-to .role { font-size: 13px; color: var(--secondary); }
+    .cover-to .date { margin-top: 4px; font-size: 12px; color: var(--tertiary); }
+
+    .cover-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 44px; }
+
+    .cover-body p {
+      font-size: 16px; color: #3a3a3c;
+      line-height: 1.85; margin-bottom: 24px;
+    }
+    .cover-body p:last-child { margin-bottom: 0; }
+
+    .cover-sign {
+      margin-top: 44px; padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .cover-sign .sign-name  { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+    .cover-sign .sign-email { font-size: 14px; color: var(--accent); }
+
+    @media (max-width: 720px) {
+      .cover-inner { padding: 32px 24px; }
+      .cover-meta  { flex-direction: column; }
+      .cover-to    { text-align: left; }
+      main         { padding: 88px 1.25rem 60px; }
+      nav          { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="index.html">← Portfolio</a>
+  <span class="nav-title" id="nav-title"></span>
+</nav>
+
+<main>
+  <p class="page-eyebrow">Cover Note</p>
+  <h1>Written for <span id="cover-company"></span></h1>
+
+  <div class="cover-wrapper">
+    <div class="cover-topbar"></div>
+    <div class="cover-inner">
+      <div class="cover-meta">
+        <div class="cover-from">
+          <p class="label">From</p>
+          <p class="name"  id="cover-from-name"></p>
+          <p class="subtitle" id="cover-from-title"></p>
+        </div>
+        <div class="cover-to">
+          <p class="label">To</p>
+          <p class="recipient" id="cover-recipient"></p>
+          <p class="role" id="cover-role"></p>
+          <p class="date" id="cover-date"></p>
+        </div>
+      </div>
+      <hr class="cover-divider" />
+      <div class="cover-body" id="cover-body"></div>
+      <div class="cover-sign">
+        <p class="sign-name"  id="sign-name"></p>
+        <p class="sign-email" id="sign-email"></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="data.js"></script>
+<script>
+  const d  = portfolioData;
+  const cn = d.coverNote;
+
+  document.title = `Cover Note · ${d.name}`;
+  document.getElementById('nav-title').textContent      = `${cn.company} · ${cn.role}`;
+  document.getElementById('cover-company').textContent  = cn.company;
+  document.getElementById('cover-from-name').textContent  = d.name;
+  document.getElementById('cover-from-title').textContent = d.title;
+  document.getElementById('cover-recipient').textContent  = cn.recipient;
+  document.getElementById('cover-role').textContent       = cn.role;
+  document.getElementById('cover-date').textContent       = cn.date;
+  document.getElementById('cover-body').innerHTML         = cn.paragraphs.map(p => `<p>${p}</p>`).join('');
+  document.getElementById('sign-name').textContent        = d.name;
+  document.getElementById('sign-email').textContent       = d.email;
+</script>
+
+</body>
+</html>

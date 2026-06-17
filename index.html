@@ -275,6 +275,31 @@
       border: 1px solid var(--border);
     }
 
+    /* ─── APPLICATION CARD ─── */
+    .app-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 32px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+      text-decoration: none; color: inherit;
+      transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .app-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .app-card-left { display: flex; flex-direction: column; gap: 6px; }
+    .app-card-company { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+    .app-card-role    { font-size: 14px; color: var(--secondary); }
+    .app-card-date    { font-size: 13px; color: var(--tertiary); }
+    .app-card-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 500; color: var(--accent);
+      white-space: nowrap;
+    }
+
     /* ─── COVER NOTE ─── */
     .cover-wrapper {
       background: var(--surface);
@@ -438,35 +463,12 @@
 
 <hr class="section-divider" />
 
-<!-- COVER NOTE -->
+<!-- APPLICATIONS -->
 <section id="cover" class="reveal">
   <div class="container">
     <p class="section-eyebrow">Applications</p>
-    <h2>Cover note · <span id="cover-company"></span></h2>
-    <div class="cover-wrapper">
-      <div class="cover-topbar"></div>
-      <div class="cover-inner">
-        <div class="cover-meta">
-          <div class="cover-from">
-            <p class="label">From</p>
-            <p class="name" id="cover-from-name"></p>
-            <p class="subtitle" id="cover-from-title"></p>
-          </div>
-          <div class="cover-to">
-            <p class="label">To</p>
-            <p class="recipient" id="cover-recipient"></p>
-            <p class="role" id="cover-role"></p>
-            <p class="role" id="cover-date" style="margin-top:4px;color:var(--tertiary);font-size:12px;"></p>
-          </div>
-        </div>
-        <hr class="cover-divider" />
-        <div class="cover-body" id="cover-body"></div>
-        <div class="cover-sign">
-          <p class="sign-name" id="sign-name"></p>
-          <p class="sign-email" id="sign-email"></p>
-        </div>
-      </div>
-    </div>
+    <h2>Cover notes</h2>
+    <div id="cover-cards"></div>
   </div>
 </section>
 
@@ -504,7 +506,7 @@
   document.getElementById('hero-bio').textContent     = d.bio;
 
   document.getElementById('hero-actions').innerHTML = `
-    <a class="btn btn-primary" href="#cover">Read Cover Note →</a>
+    <a class="btn btn-primary" href="cover.html">Read Cover Note →</a>
     <a class="btn btn-ghost" href="${d.linkedin}" target="_blank" rel="noopener">LinkedIn ↗</a>
     <a class="btn btn-ghost" href="mailto:${d.email}">${d.email}</a>
   `;
@@ -562,17 +564,18 @@
     </div>
   `).join('');
 
-  // ── Cover Note ────────────────────────────────
+  // ── Applications ──────────────────────────────
   const cn = d.coverNote;
-  document.getElementById('cover-company').textContent    = cn.company;
-  document.getElementById('cover-from-name').textContent  = d.name;
-  document.getElementById('cover-from-title').textContent = d.title;
-  document.getElementById('cover-recipient').textContent  = `${cn.recipient} · ${cn.company}`;
-  document.getElementById('cover-role').textContent       = cn.role;
-  document.getElementById('cover-date').textContent       = cn.date;
-  document.getElementById('cover-body').innerHTML         = cn.paragraphs.map(p => `<p>${p}</p>`).join('');
-  document.getElementById('sign-name').textContent        = d.name;
-  document.getElementById('sign-email').textContent       = d.email;
+  document.getElementById('cover-cards').innerHTML = `
+    <a class="app-card" href="cover.html">
+      <div class="app-card-left">
+        <span class="app-card-company">${cn.company}</span>
+        <span class="app-card-role">${cn.role}</span>
+        <span class="app-card-date">${cn.date}</span>
+      </div>
+      <span class="app-card-cta">Read cover note →</span>
+    </a>
+  `;
 
   // ── Contact ───────────────────────────────────
   document.getElementById('contact-actions').innerHTML = `
